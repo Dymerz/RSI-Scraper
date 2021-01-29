@@ -1,20 +1,21 @@
-from .web import (
-    Connector,
-    Organization, OrganizationMembers,
-    ProgressTracker, ProgressTrackerInfo,
-    Roadmap,
-    Ship,
+from .connector import Connector
+from .interface import ICommand
+from .organization import Organization, OrganizationMembers
+from .progress_tracker import ProgressTracker, ProgressTrackerInfo
+from .roadmap import Roadmap
+from .ship import Ship
+from .starmap import (
     StarmapSystems, StarmapTunnels, StarmapSpecies,
-    StarmapAffiliations,
-    StarmapStarSystems, StarmapCelestialObjects, StarmapSearch,
-    Stats,
-    Telemetry,
-    User,
-    Version,
-)
+    StarmapAffiliations, StarmapStarSystems,
+    StarmapCelestialObjects, StarmapSearch)
+from .stats import Stats
+from .telemetry import Telemetry
+from .user import User
+from .version import Version
 
 __all__ = [
     'Connector',
+    'ICommand',
     'Organization', 'OrganizationMembers',
     'ProgressTracker', 'ProgressTrackerInfo',
     'Roadmap',
@@ -28,4 +29,4 @@ __all__ = [
     'Version',
 ]
 
-__version__ = "0.6.7"
+__version__ = '0.6.7'

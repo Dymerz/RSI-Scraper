@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 with open("rsi_scrapper/__init__.py", encoding="utf8") as f:
-    version = re.search(r'__version__ = "(.*?)"', f.read()).group(1)
+    version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
 
 setuptools.setup(
     name="rsi-scrapper",
