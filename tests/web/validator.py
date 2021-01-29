@@ -2,6 +2,7 @@ import json
 from os.path import join, dirname
 from jsonschema import validate
 
+
 def assert_valid_schema(data, schema_file):
     """ Checks whether the given data matches the schema """
 

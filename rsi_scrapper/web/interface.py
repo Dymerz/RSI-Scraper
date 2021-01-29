@@ -1,58 +1,58 @@
 """Provide methods to build components
 """
 
+
 class ICommand:
-	"""Provide methods to build components.
-	"""
+    """Provide methods to build components.
+    """
 
-	def execute(self):
-		"""Execute the module.
+    def execute(self):
+        """Execute the module.
 
-		Raises:
-			NotImplementedError:
-		"""
-		raise NotImplementedError()
+        Raises:
+            NotImplementedError:
+        """
+        raise NotImplementedError()
 
-	async def execute_async(self):
-		"""Execute the module asynchronously.
+    async def execute_async(self):
+        """Execute the module asynchronously.
 
-		Raises:
-			NotImplementedError:
-		"""
-		raise NotImplementedError()
+        Raises:
+            NotImplementedError:
+        """
+        raise NotImplementedError()
 
+    @staticmethod
+    def convert_val(val: object):
+        """Convert an object to HTTP parameter.
 
-	@staticmethod
-	def convert_val(val: object):
-		"""Convert an object to HTTP parameter.
+        Args:
+            val (object): A value to convert in str.
 
-		Args:
-			val (object): A value to convert in str.
+        Returns:
+            str: A string ready for HTTP request.
+        """
+        if val is None:
+            return ""
+        if isinstance(val, list) and len(val) == 1:
+            if isinstance(val, int):
+                return int(val)
+            return val[0]
 
-		Returns:
-			str: A string ready for HTTP request.
-		"""
-		if val is None:
-			return ""
-		if isinstance(val, list) and len(val) == 1:
-			if isinstance(val, int):
-				return int(val)
-			return val[0]
+        return val
 
-		return val
+    @staticmethod
+    def http_formatter(val1, val2):
+        """Concatenate two objects to create http friendly string.
 
-	@staticmethod
-	def http_formatter(val1, val2):
-		"""Concatenate two objects to create http friendly string.
+        Args:
+            val1 (object): First value.
+            val2 (object): Second value.
 
-		Args:
-			val1 (object): First value.
-			val2 (object): Second value.
-
-		Returns:
-			string: A string HTTP ready.
-		"""
-		line = f"{val1},{val2}"
-		if len(line) == 1:
-			line = ''
-		return line
+        Returns:
+            string: A string HTTP ready.
+        """
+        line = f"{val1},{val2}"
+        if len(line) == 1:
+            line = ''
+        return line

@@ -5,96 +5,89 @@ import re
 from .connector import Connector
 from .interface import ICommand
 
+
 class Stats(ICommand):
-	"""Stats
-	"""
+    __url_crow_stat = "https://robertsspaceindustries.com/api/stats/getCrowdfundStats"
+    __url_roadmap = "https://robertsspaceindustries.com/api/roadmap/v1/init"
+    __regex_api_live = r'(live\s*version\s*:\s*(?P<live_api>(\d+(\.\d+)*))?)'
+    __regex_api_ptu = r'(ptu\s*version\s*:\s*(?P<ptu_version>(\d+(\.\d+)*))?)'
+    __regex_api_etf = r'(ptu\s*version\s*:\s*(?P<etf_version>(\d+(\.\d+)*)(.*?)((ETF)|(Evocati))))'
 
-	__url_crow_stat = "https://robertsspaceindustries.com/api/stats/getCrowdfundStats"
-	__url_roadmap = "https://robertsspaceindustries.com/api/roadmap/v1/init"
+    async def execute_async(self):
+        return self.execute()
 
-	__regex_api_live = r'(live\s*version\s*:\s*(?P<live_api>(\d+(\.\d+)*))?)'
-	__regex_api_ptu = r'(ptu\s*version\s*:\s*(?P<ptu_version>(\d+(\.\d+)*))?)'
-	__regex_api_etf = r'(ptu\s*version\s*:\s*(?P<etf_version>(\d+(\.\d+)*)(.*?)((ETF)|(Evocati))))'
+    def execute(self):
+        """ [public] get general info
+            [return] assoc array of info
+        """
 
-	def __init__(self):
-		pass
+        # Get stats info
+        stats = self.__get_crow_stats()
+        if stats is None:
+            return None
 
-	async def execute_async(self):
-		return self.execute()
+        fleet = stats['fleet']
+        if fleet is not None:
+            fleet = int(fleet)
 
-	def execute(self):
-		""" [public] get general info
-			[return] assoc array of info
-		"""
+        req = Connector().request(self.__url_roadmap, method="get")
+        if req is None or req.status_code != 200:
+            return None
 
-		# Get stats info
-		stats = self.__get_crow_stats()
-		if stats is None:
-			return None
+        text = req.text
+        live_pu = self.__get_live_pu(text)
+        live_ptu = self.__get_live_ptu(text)
+        live_etf = self.__get_live_etf(text)
 
-		fleet = stats['fleet']
-		if fleet is not None:
-			fleet = int(fleet)
+        return {
+            "fans": int(stats['fans']),
+            "funds": float(stats['funds']) / 100,
+            "fleet": fleet,
+            'current_live': live_pu,
+            'current_ptu': live_ptu,
+            'current_etf': live_etf,
+        }
 
-		req = Connector().request(self.__url_roadmap, method="get")
-		if req is None or req.status_code != 200:
-			return None
+    def __get_live_pu(self, text):
+        m = re.search(self.__regex_api_live, text, re.IGNORECASE)
+        print(m)
+        if m:
+            return m.group(3)
+        return None
 
-		text = req.text
-		live_pu = self.__get_live_pu(text)
-		live_ptu = self.__get_live_ptu(text)
-		live_etf = self.__get_live_etf(text)
+    def __get_live_ptu(self, text):
+        m = re.search(self.__regex_api_ptu, text, re.IGNORECASE)
+        if m:
+            return m.group(3)
+        return None
 
-		return {
-			"fans": int(stats['fans']),
-			"funds": float(stats['funds']) / 100,
-			"fleet": fleet,
-			'current_live': live_pu,
-			'current_ptu': live_ptu,
-			'current_etf': live_etf,
-		}
+    def __get_live_etf(self, text):
+        m = re.search(self.__regex_api_etf, text, re.IGNORECASE)
+        if m:
+            return m.group(3)
+        return None
 
-	def __get_live_pu(self, text):
-		m = re.search(self.__regex_api_live, text, re.IGNORECASE)
-		print(m)
-		if m:
-			return m.group(3)
-		return None
+    def __get_crow_stats(self, chart="day"):
+        """ [public] get all Crow stats
+            [return] assoc array of stats
+        """
+        data = {
+            "alpha_slots": True,
+            "chart": chart,
+            "fans": True,
+            "fleet": True,
+            "funds": True,
+        }
 
-	def __get_live_ptu(self, text):
-		m = re.search(self.__regex_api_ptu, text, re.IGNORECASE)
-		if m:
-			return m.group(3)
-		return None
+        req = Connector().request(self.__url_crow_stat, method="post", json_data=data)
 
-	def __get_live_etf(self, text):
-		m = re.search(self.__regex_api_etf, text, re.IGNORECASE)
-		if m:
-			return m.group(3)
-		return None
+        if req is None or req.status_code != 200:
+            return None
 
+        resp = req.json()
 
-	def __get_crow_stats(self, chart="day"):
-		""" [public] get all Crow stats
-			[return] assoc array of stats
-		"""
-		data = {
-			"alpha_slots": True,
-			"chart": chart,
-			"fans":	True,
-			"fleet": True,
-			"funds": True,
-		}
+        # check response
+        if resp['success'] != 1 or "data" not in resp:
+            return None
 
-		req = Connector().request(self.__url_crow_stat, method="post", json_data=data)
-
-		if req is None or req.status_code != 200:
-			return None
-
-		resp = req.json()
-
-		# check response
-		if resp['success'] != 1 or "data" not in resp:
-			return None
-
-		return resp['data']
+        return resp['data']
