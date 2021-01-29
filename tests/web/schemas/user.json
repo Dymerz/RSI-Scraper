@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "affiliation": {
+            "type": "array",
+            "items": {
+                "items": {}
+            }
+        },
+        "organization": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "rank": {
+                    "type": "string"
+                },
+                "sid": {
+                    "type": "string"
+                },
+                "stars": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "image",
+                "name",
+                "rank",
+                "sid"
+            ]
+        },
+        "profile": {
+            "type": "object",
+            "properties": {
+                "badge": {
+                    "type": "string"
+                },
+                "badge_image": {
+                    "type": "string"
+                },
+                "bio": {
+                    "type": "string"
+                },
+                "display": {
+                    "type": "string"
+                },
+                "enlisted": {
+                    "type": "string"
+                },
+                "fluency": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "handle": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "url"
+                    ]
+                }
+            },
+            "required": [
+                "badge",
+                "badge_image",
+                "display",
+                "enlisted",
+                "fluency",
+                "handle",
+                "id",
+                "image",
+                "page"
+            ]
+        }
+    },
+    "required": [
+        "affiliation",
+        "profile"
+    ]
+}

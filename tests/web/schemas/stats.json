@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": [
+        "current_etf",
+        "current_live",
+        "current_ptu",
+        "fans",
+        "fleet",
+        "funds"
+    ]
+}

@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "archetype": {
+            "type": "string"
+        },
+        "banner": {
+            "type": "string"
+        },
+        "commitment": {
+            "type": "string"
+        },
+        "focus": {
+            "type": "object",
+            "properties": {
+                "primary": {
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "image",
+                        "name"
+                    ]
+                },
+                "secondary": {
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "image",
+                        "name"
+                    ]
+                }
+            },
+            "required": [
+                "primary",
+                "secondary"
+            ]
+        },
+        "headline": {
+            "type": "object",
+            "properties": {
+                "html": {
+                    "type": "string"
+                },
+                "plaintext": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "html",
+                "plaintext"
+            ]
+        },
+        "href": {
+            "type": "string"
+        },
+        "lang": {
+            "type": "string"
+        },
+        "logo": {
+            "type": "string"
+        },
+        "members": {
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "recruiting": {
+            "type": "boolean"
+        },
+        "roleplay": {
+            "type": "boolean"
+        },
+        "sid": {
+            "type": "string"
+        },
+        "url": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "archetype",
+        "banner",
+        "commitment",
+        "focus",
+        "headline",
+        "href",
+        "lang",
+        "logo",
+        "members",
+        "name",
+        "recruiting",
+        "roleplay",
+        "sid",
+        "url"
+    ]
+}

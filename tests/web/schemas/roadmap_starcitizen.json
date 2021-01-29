@@ -1,0 +1,182 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "board_id": {
+                "type": "integer"
+            },
+            "cards": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "board_id": {
+                            "type": "integer"
+                        },
+                        "body": {
+                            "type": "string"
+                        },
+                        "category_id": {
+                            "type": "integer"
+                        },
+                        "category_name": {
+                            "type": "string"
+                        },
+                        "completed": {
+                            "type": "integer"
+                        },
+                        "description": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "importer_id": {
+                            "type": "string"
+                        },
+                        "inprogress": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "order": {
+                            "type": "integer"
+                        },
+                        "release_id": {
+                            "type": "integer"
+                        },
+                        "released": {
+                            "type": "integer"
+                        },
+                        "scheduled_at": {
+                            "type": "null"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "tasks": {
+                            "type": "integer"
+                        },
+                        "thumbnail": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "urls": {
+                                    "type": "object",
+                                    "properties": {
+                                        "large": {
+                                            "type": "string"
+                                        },
+                                        "rect": {
+                                            "type": "string"
+                                        },
+                                        "source": {
+                                            "type": "string"
+                                        },
+                                        "square": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "large",
+                                        "rect",
+                                        "source",
+                                        "square"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "urls"
+                            ]
+                        },
+                        "time_created": {
+                            "type": "integer"
+                        },
+                        "time_modified": {
+                            "type": "integer"
+                        },
+                        "url_slug": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "board_id",
+                        "body",
+                        "category_id",
+                        "category_name",
+                        "completed",
+                        "description",
+                        "id",
+                        "importer_id",
+                        "inprogress",
+                        "name",
+                        "order",
+                        "release_id",
+                        "released",
+                        "scheduled_at",
+                        "status",
+                        "tasks",
+                        "thumbnail",
+                        "time_created",
+                        "time_modified",
+                        "url_slug"
+                    ]
+                }
+            },
+            "description": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            },
+            "importer_id": {
+                "type": "string"
+            },
+            "name": {
+                "type": "string"
+            },
+            "order": {
+                "type": "integer"
+            },
+            "patch_announcement_link": {
+                "type": "null"
+            },
+            "released": {
+                "type": "integer"
+            },
+            "scheduled_at": {
+                "type": "null"
+            },
+            "time_created": {
+                "type": "integer"
+            },
+            "time_modified": {
+                "type": "integer"
+            },
+            "url_slug": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "board_id",
+            "cards",
+            "description",
+            "id",
+            "importer_id",
+            "name",
+            "order",
+            "patch_announcement_link",
+            "released",
+            "scheduled_at",
+            "time_created",
+            "time_modified",
+            "url_slug"
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "__typename": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "endDate": {
+                "type": "string"
+            },
+            "numberOfDeliverables": {
+                "type": "integer"
+            },
+            "slug": {
+                "type": "string"
+            },
+            "startDate": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "uuid": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "__typename",
+            "description",
+            "endDate",
+            "numberOfDeliverables",
+            "slug",
+            "startDate",
+            "title",
+            "uuid"
+        ]
+    }
+}

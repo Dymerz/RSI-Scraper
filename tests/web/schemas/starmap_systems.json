@@ -1,0 +1,137 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "affiliation": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "type": "string"
+                        },
+                        "color": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "membership_id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "code",
+                        "color",
+                        "id",
+                        "name"
+                    ]
+                }
+            },
+            "aggregated_danger": {
+                "type": "integer"
+            },
+            "aggregated_economy": {
+                "type": "number"
+            },
+            "aggregated_population": {
+                "type": "number"
+            },
+            "aggregated_size": {
+                "type": "string"
+            },
+            "code": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            },
+            "info_url": {
+                "type": "null"
+            },
+            "name": {
+                "type": "string"
+            },
+            "position_x": {
+                "type": "string"
+            },
+            "position_y": {
+                "type": "string"
+            },
+            "position_z": {
+                "type": "string"
+            },
+            "status": {
+                "type": "string"
+            },
+            "thumbnail": {
+                "type": "object",
+                "properties": {
+                    "images": {
+                        "type": "object",
+                        "properties": {
+                            "post": {
+                                "type": "string"
+                            },
+                            "product_thumb_large": {
+                                "type": "string"
+                            },
+                            "subscribers_vault_thumbnail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "post",
+                            "product_thumb_large",
+                            "subscribers_vault_thumbnail"
+                        ]
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "images",
+                    "slug",
+                    "source"
+                ]
+            },
+            "time_modified": {
+                "type": "string"
+            },
+            "type": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "affiliation",
+            "aggregated_danger",
+            "aggregated_economy",
+            "aggregated_population",
+            "aggregated_size",
+            "code",
+            "description",
+            "id",
+            "info_url",
+            "name",
+            "position_x",
+            "position_y",
+            "position_z",
+            "status",
+            "thumbnail",
+            "time_modified",
+            "type"
+        ]
+    }
+}

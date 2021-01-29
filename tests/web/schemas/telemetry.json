@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "current": {
+            "type": "object",
+            "properties": {
+                "doc_count": {
+                    "type": "integer"
+                },
+                "last_updated_at": {
+                    "type": "integer"
+                },
+                "latency_avg": {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "value"
+                    ]
+                },
+                "load_times_hdd": {
+                    "type": "object",
+                    "properties": {
+                        "percent": {
+                            "type": "integer"
+                        },
+                        "percentiles": {
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "avg",
+                        "max",
+                        "min",
+                        "percent",
+                        "percentiles"
+                    ]
+                },
+                "load_times_ssd": {
+                    "type": "object",
+                    "properties": {
+                        "avg": {
+                            "type": "number"
+                        },
+                        "max": {
+                            "type": "number"
+                        },
+                        "min": {
+                            "type": "number"
+                        },
+                        "percent": {
+                            "type": "integer"
+                        },
+                        "percentiles": {
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "avg",
+                        "max",
+                        "min",
+                        "percent",
+                        "percentiles"
+                    ]
+                },
+                "popular_resolutions": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "stability_score": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "doc_count",
+                "last_updated_at",
+                "latency_avg",
+                "load_times_hdd",
+                "load_times_ssd",
+                "popular_resolutions",
+                "stability_score"
+            ]
+        }
+    },
+    "required": [
+        "current",
+        "past"
+    ]
+}

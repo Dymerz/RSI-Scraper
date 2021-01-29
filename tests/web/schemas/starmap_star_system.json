@@ -1,0 +1,672 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "affiliation": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "type": "string"
+                        },
+                        "color": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "membership.id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "code",
+                        "color",
+                        "id",
+                        "membership.id",
+                        "name"
+                    ]
+                }
+            },
+            "aggregated_danger": {
+                "type": "integer"
+            },
+            "aggregated_economy": {
+                "type": "integer"
+            },
+            "aggregated_population": {
+                "type": "integer"
+            },
+            "aggregated_size": {
+                "type": "string"
+            },
+            "celestial_objects": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "affiliation": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "color": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "membership.id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "code",
+                                    "color",
+                                    "id",
+                                    "membership.id",
+                                    "name"
+                                ]
+                            }
+                        },
+                        "age": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "appearance": {
+                            "type": "string"
+                        },
+                        "axial_tilt": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "code": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "designation": {
+                            "type": "string"
+                        },
+                        "distance": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "fairchanceact": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "habitable": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "info_url": {
+                            "type": "null"
+                        },
+                        "latitude": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "longitude": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "name": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "orbit_period": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "parent_id": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "population": {
+                            "type": "array",
+                            "items": {
+                                "items": {}
+                            }
+                        },
+                        "sensor_danger": {
+                            "type": "string"
+                        },
+                        "sensor_economy": {
+                            "type": "string"
+                        },
+                        "sensor_population": {
+                            "type": "string"
+                        },
+                        "shader_data": {
+                            "type": [
+                                "null",
+                                "object"
+                            ],
+                            "properties": {
+                                "orbitalFactor": {
+                                    "type": "integer"
+                                },
+                                "orbitalMax": {
+                                    "type": "integer"
+                                },
+                                "orbitalMin": {
+                                    "type": "integer"
+                                },
+                                "radius": {
+                                    "type": "number"
+                                },
+                                "sun": {
+                                    "type": "object",
+                                    "properties": {
+                                        "alpha": {
+                                            "type": "integer"
+                                        },
+                                        "color1": {
+                                            "type": "string"
+                                        },
+                                        "color2": {
+                                            "type": "string"
+                                        },
+                                        "corona": {
+                                            "type": "number"
+                                        },
+                                        "flare1": {
+                                            "type": "number"
+                                        },
+                                        "flare2": {
+                                            "type": "number"
+                                        },
+                                        "flare3": {
+                                            "type": "number"
+                                        },
+                                        "flare4": {
+                                            "type": "number"
+                                        },
+                                        "flare5": {
+                                            "type": "number"
+                                        },
+                                        "flare6": {
+                                            "type": "number"
+                                        },
+                                        "glow": {
+                                            "type": "number"
+                                        },
+                                        "iterations": {
+                                            "type": "integer"
+                                        },
+                                        "map": {
+                                            "type": "string"
+                                        },
+                                        "rotation1": {
+                                            "type": "number"
+                                        },
+                                        "rotation2": {
+                                            "type": "number"
+                                        },
+                                        "scaleMax": {
+                                            "type": "integer"
+                                        },
+                                        "scaleMin": {
+                                            "type": "integer"
+                                        },
+                                        "scalePeriod": {
+                                            "type": "integer"
+                                        },
+                                        "sphere": {
+                                            "type": "number"
+                                        },
+                                        "texture": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "alpha",
+                                        "color1",
+                                        "color2",
+                                        "corona",
+                                        "flare1",
+                                        "flare2",
+                                        "flare3",
+                                        "flare4",
+                                        "flare5",
+                                        "flare6",
+                                        "glow",
+                                        "iterations",
+                                        "map",
+                                        "rotation1",
+                                        "rotation2",
+                                        "scaleMax",
+                                        "scaleMin",
+                                        "scalePeriod",
+                                        "sphere",
+                                        "texture"
+                                    ]
+                                },
+                                "fullturn": {
+                                    "type": "integer"
+                                },
+                                "highlight": {
+                                    "type": "object",
+                                    "properties": {
+                                        "alpha": {
+                                            "type": "integer"
+                                        },
+                                        "atmosphere1": {
+                                            "type": "number"
+                                        },
+                                        "atmosphere2": {
+                                            "type": "number"
+                                        },
+                                        "atmosphere3": {
+                                            "type": "number"
+                                        },
+                                        "color1": {
+                                            "type": "string"
+                                        },
+                                        "color2": {
+                                            "type": "string"
+                                        },
+                                        "scaleMax": {
+                                            "type": "integer"
+                                        },
+                                        "scaleMin": {
+                                            "type": "integer"
+                                        },
+                                        "scalePeriod": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "alpha",
+                                        "atmosphere1",
+                                        "atmosphere2",
+                                        "atmosphere3",
+                                        "color1",
+                                        "color2",
+                                        "scaleMax",
+                                        "scaleMin",
+                                        "scalePeriod"
+                                    ]
+                                }
+                            }
+                        },
+                        "show_label": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "show_orbitlines": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "size": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "subtype": {
+                            "type": [
+                                "null",
+                                "object"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "subtype_id": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "time_modified": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        },
+                        "texture": {
+                            "type": "object",
+                            "properties": {
+                                "images": {
+                                    "type": "object",
+                                    "properties": {
+                                        "post": {
+                                            "type": "string"
+                                        },
+                                        "product_thumb_large": {
+                                            "type": "string"
+                                        },
+                                        "subscribers_vault_thumbnail": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "post",
+                                        "product_thumb_large",
+                                        "subscribers_vault_thumbnail"
+                                    ]
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "source": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "images",
+                                "slug",
+                                "source"
+                            ]
+                        },
+                        "thumbnail": {
+                            "type": "object",
+                            "properties": {
+                                "images": {
+                                    "type": "object",
+                                    "properties": {
+                                        "post": {
+                                            "type": "string"
+                                        },
+                                        "product_thumb_large": {
+                                            "type": "string"
+                                        },
+                                        "subscribers_vault_thumbnail": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "post",
+                                        "product_thumb_large",
+                                        "subscribers_vault_thumbnail"
+                                    ]
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "source": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "images",
+                                "slug",
+                                "source"
+                            ]
+                        },
+                        "model": {
+                            "type": "object",
+                            "properties": {
+                                "images": {
+                                    "type": "array",
+                                    "items": {
+                                        "items": {}
+                                    }
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "source": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "images",
+                                "slug",
+                                "source"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "affiliation",
+                        "age",
+                        "appearance",
+                        "axial_tilt",
+                        "code",
+                        "description",
+                        "designation",
+                        "distance",
+                        "fairchanceact",
+                        "habitable",
+                        "id",
+                        "info_url",
+                        "latitude",
+                        "longitude",
+                        "name",
+                        "orbit_period",
+                        "parent_id",
+                        "population",
+                        "sensor_danger",
+                        "sensor_economy",
+                        "sensor_population",
+                        "shader_data",
+                        "show_label",
+                        "show_orbitlines",
+                        "size",
+                        "subtype",
+                        "subtype_id",
+                        "time_modified",
+                        "type"
+                    ]
+                }
+            },
+            "code": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "frost_line": {
+                "type": "string"
+            },
+            "habitable_zone_inner": {
+                "type": "string"
+            },
+            "habitable_zone_outer": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            },
+            "info_url": {
+                "type": "null"
+            },
+            "name": {
+                "type": "string"
+            },
+            "position_x": {
+                "type": "string"
+            },
+            "position_y": {
+                "type": "string"
+            },
+            "position_z": {
+                "type": "string"
+            },
+            "shader_data": {
+                "type": "object",
+                "properties": {
+                    "lightColor": {
+                        "type": "string"
+                    },
+                    "planetsSize": {
+                        "type": "object",
+                        "properties": {
+                            "kFactor": {
+                                "type": "number"
+                            },
+                            "max": {
+                                "type": "number"
+                            },
+                            "min": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "kFactor",
+                            "max",
+                            "min"
+                        ]
+                    },
+                    "starfield": {
+                        "type": "object",
+                        "properties": {
+                            "color1": {
+                                "type": "string"
+                            },
+                            "color2": {
+                                "type": "string"
+                            },
+                            "count": {
+                                "type": "number"
+                            },
+                            "radius": {
+                                "type": "integer"
+                            },
+                            "sizeMax": {
+                                "type": "integer"
+                            },
+                            "sizeMin": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "color1",
+                            "color2",
+                            "count",
+                            "radius",
+                            "sizeMax",
+                            "sizeMin"
+                        ]
+                    }
+                },
+                "required": [
+                    "lightColor",
+                    "planetsSize",
+                    "starfield"
+                ]
+            },
+            "status": {
+                "type": "string"
+            },
+            "thumbnail": {
+                "type": "object",
+                "properties": {
+                    "images": {
+                        "type": "object",
+                        "properties": {
+                            "post": {
+                                "type": "string"
+                            },
+                            "product_thumb_large": {
+                                "type": "string"
+                            },
+                            "subscribers_vault_thumbnail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "post",
+                            "product_thumb_large",
+                            "subscribers_vault_thumbnail"
+                        ]
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "images",
+                    "slug",
+                    "source"
+                ]
+            },
+            "time_modified": {
+                "type": "string"
+            },
+            "type": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "affiliation",
+            "aggregated_danger",
+            "aggregated_economy",
+            "aggregated_population",
+            "aggregated_size",
+            "celestial_objects",
+            "code",
+            "description",
+            "frost_line",
+            "habitable_zone_inner",
+            "habitable_zone_outer",
+            "id",
+            "info_url",
+            "name",
+            "position_x",
+            "position_y",
+            "position_z",
+            "shader_data",
+            "status",
+            "thumbnail",
+            "time_modified",
+            "type"
+        ]
+    }
+}

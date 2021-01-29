@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "direction": {
+                "type": "string"
+            },
+            "entry_id": {
+                "type": "string"
+            },
+            "exit_id": {
+                "type": "string"
+            },
+            "size": {
+                "type": "string"
+            },
+            "entry": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string"
+                    },
+                    "designation": {
+                        "type": "string"
+                    },
+                    "distance": {
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "type": "string"
+                    },
+                    "longitude": {
+                        "type": "string"
+                    },
+                    "star_system_id": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "code",
+                    "designation",
+                    "distance",
+                    "latitude",
+                    "longitude",
+                    "name",
+                    "star_system_id",
+                    "status",
+                    "type"
+                ]
+            },
+            "exit": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "code": {
+                        "type": "string"
+                    },
+                    "designation": {
+                        "type": "string"
+                    },
+                    "distance": {
+                        "type": "string"
+                    },
+                    "latitude": {
+                        "type": "string"
+                    },
+                    "longitude": {
+                        "type": "string"
+                    },
+                    "star_system_id": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "code",
+                    "designation",
+                    "distance",
+                    "latitude",
+                    "longitude",
+                    "name",
+                    "star_system_id",
+                    "status",
+                    "type"
+                ]
+            }
+        },
+        "required": [
+            "id",
+            "direction",
+            "entry_id",
+            "exit_id",
+            "name",
+            "size",
+            "entry",
+            "exit"
+        ]
+    }
+}

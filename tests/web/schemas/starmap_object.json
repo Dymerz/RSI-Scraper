@@ -1,0 +1,191 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "affiliation": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "type": "string"
+                        },
+                        "color": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "membership_id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "code",
+                        "color",
+                        "id",
+                        "name"
+                    ]
+                }
+            },
+            "appearance": {
+                "type": "string"
+            },
+            "children": {
+                "type": "array",
+                "items": {
+                    "items": {}
+                }
+            },
+            "code": {
+                "type": "string"
+            },
+            "description": {
+                "type": "string"
+            },
+            "designation": {
+                "type": "string"
+            },
+            "distance": {
+                "type": "string"
+            },
+            "habitable": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            },
+            "longitude": {
+                "type": "string"
+            },
+            "parent_id": {
+                "type": "string"
+            },
+            "population": {
+                "type": "array",
+                "items": {
+                    "items": {}
+                }
+            },
+            "sensor_danger": {
+                "type": "string"
+            },
+            "sensor_economy": {
+                "type": "string"
+            },
+            "sensor_population": {
+                "type": "string"
+            },
+            "show_label": {
+                "type": "string"
+            },
+            "show_orbitlines": {
+                "type": "string"
+            },
+            "size": {
+                "type": "string"
+            },
+            "subtype": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "type"
+                ]
+            },
+            "subtype_id": {
+                "type": "string"
+            },
+            "texture": {
+                "type": "object",
+                "properties": {
+                    "images": {
+                        "type": "object",
+                        "properties": {
+                            "post": {
+                                "type": "string"
+                            },
+                            "product_thumb_large": {
+                                "type": "string"
+                            },
+                            "subscribers_vault_thumbnail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "post",
+                            "product_thumb_large",
+                            "subscribers_vault_thumbnail"
+                        ]
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "images",
+                    "slug",
+                    "source"
+                ]
+            },
+            "time_modified": {
+                "type": "string"
+            },
+            "type": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "affiliation",
+            "age",
+            "appearance",
+            "axial_tilt",
+            "children",
+            "code",
+            "description",
+            "designation",
+            "distance",
+            "fairchanceact",
+            "habitable",
+            "id",
+            "info_url",
+            "latitude",
+            "longitude",
+            "name",
+            "orbit_period",
+            "parent_id",
+            "population",
+            "sensor_danger",
+            "sensor_economy",
+            "sensor_population",
+            "shader_data",
+            "show_label",
+            "show_orbitlines",
+            "size",
+            "subtype",
+            "subtype_id",
+            "texture",
+            "time_modified",
+            "type"
+        ]
+    }
+}

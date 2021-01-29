@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "display": {
+                "type": "string"
+            },
+            "handle": {
+                "type": "string"
+            },
+            "image": {
+                "type": "string"
+            },
+            "rank": {
+                "type": "string"
+            },
+            "roles": {
+                "type": "array",
+                "items": {
+                    "items": {}
+                }
+            },
+            "stars": {
+                "type": "integer"
+            }
+        },
+        "required": [
+            "display",
+            "handle",
+            "image",
+            "rank",
+            "roles",
+            "stars"
+        ]
+    }
+}

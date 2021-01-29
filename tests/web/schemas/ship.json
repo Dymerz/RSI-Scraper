@@ -1,0 +1,1252 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "afterburner_speed": {
+                "type": "string"
+            },
+            "beam": {
+                "type": "string"
+            },
+            "cargocapacity": {
+                "type": "string"
+            },
+            "chassis_id": {
+                "type": "string"
+            },
+            "compiled": {
+                "type": "object",
+                "properties": {
+                    "RSIAvionic": {
+                        "type": "object",
+                        "properties": {
+                            "computers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "radar": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "computers",
+                            "radar"
+                        ]
+                    },
+                    "RSIModular": {
+                        "type": "object",
+                        "properties": {
+                            "coolers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "power_plants": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "shield_generators": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "coolers",
+                            "power_plants",
+                            "shield_generators"
+                        ]
+                    },
+                    "RSIPropulsion": {
+                        "type": "object",
+                        "properties": {
+                            "fuel_intakes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "fuel_tanks": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "jump_modules": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "quantum_drives": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "quantum_fuel_tanks": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "fuel_intakes",
+                            "fuel_tanks",
+                            "jump_modules",
+                            "quantum_drives",
+                            "quantum_fuel_tanks"
+                        ]
+                    },
+                    "RSIThruster": {
+                        "type": "object",
+                        "properties": {
+                            "main_thrusters": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "category": {
+                                            "type": "string"
+                                        },
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "category",
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "maneuvering_thrusters": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "category": {
+                                            "type": "string"
+                                        },
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "category",
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "main_thrusters",
+                            "maneuvering_thrusters"
+                        ]
+                    },
+                    "RSIWeapon": {
+                        "type": "object",
+                        "properties": {
+                            "missiles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "turrets": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "utility_items": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            },
+                            "weapons": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "component_class": {
+                                            "type": "string"
+                                        },
+                                        "component_size": {
+                                            "type": "string"
+                                        },
+                                        "details": {
+                                            "type": "string"
+                                        },
+                                        "mounts": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "quantity": {
+                                            "type": "string"
+                                        },
+                                        "size": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "component_class",
+                                        "component_size",
+                                        "details",
+                                        "manufacturer",
+                                        "mounts",
+                                        "name",
+                                        "quantity",
+                                        "size",
+                                        "type"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "missiles",
+                            "turrets",
+                            "utility_items",
+                            "weapons"
+                        ]
+                    }
+                },
+                "required": [
+                    "RSIAvionic",
+                    "RSIModular",
+                    "RSIPropulsion",
+                    "RSIThruster",
+                    "RSIWeapon"
+                ]
+            },
+            "description": {
+                "type": "string"
+            },
+            "focus": {
+                "type": "string"
+            },
+            "id": {
+                "type": "string"
+            },
+            "length": {
+                "type": "string"
+            },
+            "manufacturer": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "known_for": {
+                        "type": "string"
+                    },
+                    "media": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "depot": {
+                                    "type": "string"
+                                },
+                                "depot_status": {
+                                    "type": "string"
+                                },
+                                "derived_data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "sizes": {
+                                            "type": "object",
+                                            "required": [
+                                                "avatar",
+                                                "background_blur",
+                                                "banner",
+                                                "channel_item_full",
+                                                "component_description",
+                                                "cover",
+                                                "heap_infobox",
+                                                "heap_note",
+                                                "heap_thumb",
+                                                "home_transmissions_item_expanded",
+                                                "icon",
+                                                "logo",
+                                                "post",
+                                                "post_section_header",
+                                                "press_latest_post",
+                                                "product_thumb_in_description",
+                                                "product_thumb_large",
+                                                "product_thumb_medium_and_small",
+                                                "product_thumb_shipmod",
+                                                "slideshow",
+                                                "slideshow_pager",
+                                                "store_hub_large",
+                                                "store_hub_small",
+                                                "store_large",
+                                                "store_slideshow_large",
+                                                "store_slideshow_large_zoom",
+                                                "store_slideshow_small",
+                                                "store_slideshow_small_zoom",
+                                                "store_small",
+                                                "store_thumb_listing_small",
+                                                "store_thumb_sku_detail",
+                                                "subscribers_vault_thumbnail",
+                                                "wallpaper_thumb"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "sizes"
+                                    ]
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "images": {
+                                    "type": "object",
+
+                                    "required": [
+                                        "avatar",
+                                        "background_blur",
+                                        "banner",
+                                        "bug_council_thumbnail",
+                                        "channel_item_full",
+                                        "component_description",
+                                        "cover",
+                                        "heap_infobox",
+                                        "heap_note",
+                                        "heap_thumb",
+                                        "home_transmissions_item_expanded",
+                                        "hub_large",
+                                        "hub_medium",
+                                        "hub_small",
+                                        "hub_tile",
+                                        "icon",
+                                        "logo",
+                                        "post",
+                                        "post_section_header",
+                                        "press_latest_post",
+                                        "product_thumb_in_description",
+                                        "product_thumb_large",
+                                        "product_thumb_medium_and_small",
+                                        "product_thumb_shipmod",
+                                        "sku_widget_modal",
+                                        "sku_widget_thumbnail",
+                                        "slideshow",
+                                        "slideshow_pager",
+                                        "slideshow_wide",
+                                        "store_hub_large",
+                                        "store_hub_small",
+                                        "store_large",
+                                        "store_slideshow_large",
+                                        "store_slideshow_large_zoom",
+                                        "store_slideshow_small",
+                                        "store_slideshow_small_zoom",
+                                        "store_small",
+                                        "store_thumb_listing_small",
+                                        "store_thumb_sku_detail",
+                                        "store_upgrade_half",
+                                        "subscribers_vault_thumbnail",
+                                        "tavern_upload_emoji",
+                                        "tavern_upload_large",
+                                        "tavern_upload_medium",
+                                        "tavern_upload_mini",
+                                        "tavern_upload_small",
+                                        "tavern_upload_square",
+                                        "texture",
+                                        "vault_thumb",
+                                        "wallpaper_1920x1080",
+                                        "wallpaper_3840x2160",
+                                        "wallpaper_512x384",
+                                        "wallpaper_thumb",
+                                        "wsc_event_thumb"
+                                    ]
+                                },
+                                "purpose": {
+                                    "type": "string"
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "source_extension": {
+                                    "type": "string"
+                                },
+                                "source_name": {
+                                    "type": "string"
+                                },
+                                "source_stream": {
+                                    "type": "object",
+                                    "properties": {
+                                        "progressive": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "progressive"
+                                    ]
+                                },
+                                "source_url": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "tag_string": {
+                                    "type": "string"
+                                },
+                                "time_modified": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "depot",
+                                "depot_status",
+                                "derived_data",
+                                "distant_id",
+                                "distant_source",
+                                "id",
+                                "images",
+                                "purpose",
+                                "slug",
+                                "source_extension",
+                                "source_name",
+                                "source_stream",
+                                "source_url",
+                                "status",
+                                "tag_string",
+                                "time_modified",
+                                "type"
+                            ]
+                        }
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "description",
+                    "id",
+                    "known_for",
+                    "media",
+                    "name"
+                ]
+            },
+            "manufacturer_id": {
+                "type": "string"
+            },
+            "mass": {
+                "type": "string"
+            },
+            "max_crew": {
+                "type": "string"
+            },
+            "media": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "depot": {
+                            "type": "string"
+                        },
+                        "depot_status": {
+                            "type": "string"
+                        },
+                        "derived_data": {
+                            "type": "object",
+                            "properties": {
+                                "sizes": {
+                                    "type": "object",
+                                    "required": [
+                                        "avatar",
+                                        "background_blur",
+                                        "banner",
+                                        "bug_council_thumbnail",
+                                        "channel_item_full",
+                                        "component_description",
+                                        "cover",
+                                        "heap_infobox",
+                                        "heap_note",
+                                        "heap_thumb",
+                                        "home_transmissions_item_expanded",
+                                        "hub_large",
+                                        "hub_medium",
+                                        "hub_small",
+                                        "hub_tile",
+                                        "icon",
+                                        "logo",
+                                        "post",
+                                        "post_section_header",
+                                        "press_latest_post",
+                                        "product_thumb_in_description",
+                                        "product_thumb_large",
+                                        "product_thumb_medium_and_small",
+                                        "product_thumb_shipmod",
+                                        "sku_widget_modal",
+                                        "sku_widget_thumbnail",
+                                        "slideshow",
+                                        "slideshow_pager",
+                                        "slideshow_wide",
+                                        "store_hub_large",
+                                        "store_hub_small",
+                                        "store_large",
+                                        "store_slideshow_large",
+                                        "store_slideshow_large_zoom",
+                                        "store_slideshow_small",
+                                        "store_slideshow_small_zoom",
+                                        "store_small",
+                                        "store_thumb_listing_small",
+                                        "store_thumb_sku_detail",
+                                        "store_upgrade_half",
+                                        "subscribers_vault_thumbnail",
+                                        "tavern_upload_emoji",
+                                        "tavern_upload_large",
+                                        "tavern_upload_medium",
+                                        "tavern_upload_mini",
+                                        "tavern_upload_small",
+                                        "tavern_upload_square",
+                                        "texture",
+                                        "vault_thumb",
+                                        "wallpaper_1920x1080",
+                                        "wallpaper_3840x2160",
+                                        "wallpaper_512x384",
+                                        "wallpaper_thumb",
+                                        "wsc_event_thumb"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "sizes"
+                            ]
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "images": {
+                            "type": "object",
+                            "required": [
+                                "avatar",
+                                "background_blur",
+                                "banner",
+                                "bug_council_thumbnail",
+                                "channel_item_full",
+                                "component_description",
+                                "cover",
+                                "heap_infobox",
+                                "heap_note",
+                                "heap_thumb",
+                                "home_transmissions_item_expanded",
+                                "hub_large",
+                                "hub_medium",
+                                "hub_small",
+                                "hub_tile",
+                                "icon",
+                                "logo",
+                                "post",
+                                "post_section_header",
+                                "press_latest_post",
+                                "product_thumb_in_description",
+                                "product_thumb_large",
+                                "product_thumb_medium_and_small",
+                                "product_thumb_shipmod",
+                                "sku_widget_modal",
+                                "sku_widget_thumbnail",
+                                "slideshow",
+                                "slideshow_pager",
+                                "slideshow_wide",
+                                "store_hub_large",
+                                "store_hub_small",
+                                "store_large",
+                                "store_slideshow_large",
+                                "store_slideshow_large_zoom",
+                                "store_slideshow_small",
+                                "store_slideshow_small_zoom",
+                                "store_small",
+                                "store_thumb_listing_small",
+                                "store_thumb_sku_detail",
+                                "store_upgrade_half",
+                                "subscribers_vault_thumbnail",
+                                "tavern_upload_emoji",
+                                "tavern_upload_large",
+                                "tavern_upload_medium",
+                                "tavern_upload_mini",
+                                "tavern_upload_small",
+                                "tavern_upload_square",
+                                "texture",
+                                "vault_thumb",
+                                "wallpaper_1920x1080",
+                                "wallpaper_3840x2160",
+                                "wallpaper_512x384",
+                                "wallpaper_thumb",
+                                "wsc_event_thumb"
+                            ]
+                        },
+                        "purpose": {
+                            "type": "string"
+                        },
+                        "slug": {
+                            "type": "string"
+                        },
+                        "source_extension": {
+                            "type": "string"
+                        },
+                        "source_name": {
+                            "type": "string"
+                        },
+                        "source_stream": {
+                            "type": "object",
+                            "properties": {
+                                "progressive": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "progressive"
+                            ]
+                        },
+                        "source_url": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "tag_string": {
+                            "type": "string"
+                        },
+                        "time_modified": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "depot",
+                        "depot_status",
+                        "derived_data",
+                        "distant_id",
+                        "distant_source",
+                        "id",
+                        "images",
+                        "publish_start",
+                        "purpose",
+                        "slug",
+                        "source_extension",
+                        "source_name",
+                        "source_stream",
+                        "source_url",
+                        "status",
+                        "tag_string",
+                        "time_modified",
+                        "type"
+                    ]
+                }
+            },
+            "name": {
+                "type": "string"
+            },
+            "price": {
+                "type": [
+                    "number",
+                    "integer"
+                ]
+            }
+        },
+        "required": [
+            "afterburner_speed",
+            "beam",
+            "cargocapacity",
+            "chassis_id",
+            "compiled",
+            "description",
+            "focus",
+            "height",
+            "id",
+            "length",
+            "manufacturer",
+            "manufacturer_id",
+            "mass",
+            "max_crew",
+            "media",
+            "min_crew",
+            "name",
+            "pitch_max",
+            "price",
+            "production_note",
+            "production_status",
+            "roll_max",
+            "scm_speed",
+            "size",
+            "time_modified",
+            "type",
+            "url",
+            "xaxis_acceleration",
+            "yaw_max",
+            "yaxis_acceleration",
+            "zaxis_acceleration"
+        ]
+    }
+}
