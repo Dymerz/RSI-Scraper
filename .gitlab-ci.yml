@@ -11,7 +11,7 @@ tests:
     - docker
   only:
     - develop
-    - feature/ci-*
+    - /^feature/ci-.*$/i
   variables:
     DOCKER_DRIVER: overlay
   before_script:
