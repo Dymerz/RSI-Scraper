@@ -9,7 +9,7 @@ from .validator import assert_valid_schema
     ('IPIX', 3),
 ])
 def test_request(sid, page):
-    from rsi_scrapper import OrganizationMembers
+    from rsi_scraper import OrganizationMembers
 
     object = OrganizationMembers(sid, page=page)
     data = object.execute()

@@ -4,7 +4,7 @@ from .validator import assert_valid_schema
 
 @pytest.mark.organization
 def test_request():
-    from rsi_scrapper import Organization
+    from rsi_scraper import Organization
 
     object = Organization('PROTECTORA')
     data = object.execute()

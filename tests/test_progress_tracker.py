@@ -4,7 +4,7 @@ from .validator import assert_valid_schema
 
 @pytest.mark.progress_tracker
 def test_request():
-    from rsi_scrapper import ProgressTracker
+    from rsi_scraper import ProgressTracker
 
     object = ProgressTracker()
     data = object.execute()
@@ -15,7 +15,7 @@ def test_request():
 
 @pytest.mark.progress_tracker_info
 def test_request_info():
-    from rsi_scrapper import ProgressTrackerInfo
+    from rsi_scraper import ProgressTrackerInfo
 
     object = ProgressTrackerInfo('g42qg07ipfday')
     data = object.execute()

@@ -5,11 +5,11 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-with open("rsi_scrapper/__init__.py", encoding="utf8") as f:
+with open("rsi_scraper/__init__.py", encoding="utf8") as f:
     version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
 
 setuptools.setup(
-    name="rsi-scrapper",
+    name="rsi-scraper",
     version=version,
     author="Urbain Corentin",
     author_email="corentin.urbain@gmail.com",

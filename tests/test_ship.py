@@ -4,7 +4,7 @@ from .validator import assert_valid_schema
 
 @pytest.mark.ship
 def test_request():
-    from rsi_scrapper import Ship
+    from rsi_scraper import Ship
 
     object = Ship(name='Cutlass Black')
     data = object.execute()

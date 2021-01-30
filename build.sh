@@ -17,7 +17,7 @@ function build() {
 	echo " ok"
 
 	echo -n "Installing.."
-	python3 -m pip install --force-reinstall  "$DIR/dist/starcitizen-scrapper-${1}-py3-none-any.whl"
+	python3 -m pip install --force-reinstall  "$DIR/dist/starcitizen-scraper-${1}-py3-none-any.whl"
 	echo " ok"
 }
 

@@ -4,7 +4,7 @@ from .validator import assert_valid_schema
 
 @pytest.mark.starmap
 def test_request_systems():
-    from rsi_scrapper import StarmapSystems
+    from rsi_scraper import StarmapSystems
 
     object = StarmapSystems('pyro')
     data = object.execute()
@@ -15,7 +15,7 @@ def test_request_systems():
 
 @pytest.mark.starmap
 def test_request_search():
-    from rsi_scrapper import StarmapSearch
+    from rsi_scraper import StarmapSearch
 
     object = StarmapSearch('Stanton')
     data = object.execute()
@@ -26,7 +26,7 @@ def test_request_search():
 
 @pytest.mark.starmap
 def test_request_object():
-    from rsi_scrapper import StarmapCelestialObjects
+    from rsi_scraper import StarmapCelestialObjects
 
     object = StarmapCelestialObjects('TOHIL.PLANETS.TOHILIII')
     data = object.execute()
@@ -37,7 +37,7 @@ def test_request_object():
 
 @pytest.mark.starmap
 def test_request_star_system():
-    from rsi_scrapper import StarmapStarSystems
+    from rsi_scraper import StarmapStarSystems
 
     object = StarmapStarSystems('STANTON')
     data = object.execute()
@@ -48,7 +48,7 @@ def test_request_star_system():
 
 @pytest.mark.starmap
 def test_request_tunnels():
-    from rsi_scrapper import StarmapTunnels
+    from rsi_scraper import StarmapTunnels
 
     object = StarmapTunnels('1188')
     data = object.execute()
@@ -59,7 +59,7 @@ def test_request_tunnels():
 
 @pytest.mark.starmap
 def test_request_species():
-    from rsi_scrapper import StarmapSpecies
+    from rsi_scraper import StarmapSpecies
 
     object = StarmapSpecies()
     data = object.execute()

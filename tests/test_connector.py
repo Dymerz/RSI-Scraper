@@ -3,7 +3,7 @@ import os
 import pytest
 import warnings
 
-from rsi_scrapper import Connector
+from rsi_scraper import Connector
 import requests
 
 url = 'http://icanhazip.com'
