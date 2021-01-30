@@ -1,0 +1,33 @@
+services:
+  - docker:dind
+
+stages:
+  - tests
+
+prepare-images:
+  image: docker:stable
+  stage: tests
+  tags:
+    - docker
+  only:
+    - develop
+    - feature/ci-*
+  variables:
+    DOCKER_DRIVER: overlay
+  before_script:
+    - docker pull -q mattes/rotating-proxy:latest@sha256:189d936003881e7cc6781950da10328498f912bfa53003831591c3ae33003973
+    - docker pull -q python:3.9.1-slim-buster
+
+  script:
+    - |
+      echo "Starting proxy"
+    - docker run --rm -d -i --name proxy -p 5566:5566 mattes/rotating-proxy:latest@sha256:189d936003881e7cc6781950da10328498f912bfa53003831591c3ae33003973
+
+    - docker run --rm \
+      -v $PWD:/ \
+      -e HTTP_PROXY=proxy:5566
+      python:3.9.1-slim-buster /bin/bash -c \ "pip install pytest pytest-asyncio . && pytest"
+
+  after_script:
+    - docker kill $(docker ps -qa)
+    - docker rmi
