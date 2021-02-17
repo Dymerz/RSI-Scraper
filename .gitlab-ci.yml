@@ -1,0 +1,32 @@
+services:
+  - docker:dind
+
+stages:
+  - tests
+
+tests:
+  image: docker:stable
+  stage: tests
+  tags:
+    - docker
+  only:
+    - develop
+    - /^feature/ci-.*$/i
+  variables:
+    DOCKER_DRIVER: overlay
+  before_script:
+    - docker pull -q mattes/rotating-proxy:latest@sha256:189d936003881e7cc6781950da10328498f912bfa53003831591c3ae33003973
+    - docker pull -q python:3.9.1-slim-buster
+
+  script:
+    - docker run --rm -d -i --name proxy -p 5566:5566 mattes/rotating-proxy:latest@sha256:189d936003881e7cc6781950da10328498f912bfa53003831591c3ae33003973
+
+    # Get the Proxy address
+    - proxy_addr=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' proxy)
+
+    -  |
+      docker run --rm \
+      -v $PWD:/app \
+      -w /app \
+      -e HTTP_PROXY=http://${proxy_addr}:5566 \
+      python:3.9.1-slim-buster /bin/bash -c "pip install . pytest pytest-asyncio jsonschema && pytest"
