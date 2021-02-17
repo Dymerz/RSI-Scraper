@@ -45,13 +45,13 @@ class Version(ICommand):
                 p['link'] = Connector.url_host + href
 
             # get article title
-            for title in patch.xpath("//*[contains(@class, 'title-holder')]/*/text()"):
+            for title in patch.xpath("./*[contains(@class, 'title-holder')]/*/text()"):
                 p['title'] = title.strip()
                 if m := re.search(self.__regex_website_version, title):
                     p['version'] = m.group(1)
 
             # get background image
-            for style in patch.xpath("//*[contains(@class, 'background')]/@style"):
+            for style in patch.xpath("./*[contains(@class, 'background')]/@style"):
                 if m := re.match(self.__regex_website_background, style):
                     background = m.group(2)
 
@@ -61,4 +61,5 @@ class Version(ICommand):
                         p['image'] = Connector.url_host + background
 
             result.append(p)
+            print(p)
         return result
