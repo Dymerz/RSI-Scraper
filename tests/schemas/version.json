@@ -2,6 +2,26 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "array",
     "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+            "link": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "version": {
+                "type": "string"
+            },
+            "image": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "link",
+            "title",
+            "version",
+            "image"
+        ]
     }
 }

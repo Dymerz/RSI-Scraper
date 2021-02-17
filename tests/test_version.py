@@ -10,6 +10,4 @@ def test_request():
     data = object.execute()
     assert data is not None
 
-    with open('log.json', 'w') as f:
-        f.write(str(data))
     assert_valid_schema(data, 'version.json')
