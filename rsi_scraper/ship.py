@@ -19,10 +19,11 @@ class Ship(ICommand):
         self.kwargs = kwargs
 
     async def execute_async(self):
-        return self.execute()
+        return asyncio.run(self.get_ships_pages_async())
 
     def execute(self):
-        return asyncio.run(self.get_ships_pages_async())
+        res = asyncio.run(self.get_ships_pages_async())
+        return res
 
     async def get_ships_pages_async(self):
         """Get all ships using advanced search through pages.

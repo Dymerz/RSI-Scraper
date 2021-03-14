@@ -15,12 +15,8 @@ class Version(ICommand):
     __regex_website_version = r'((\d\.?)+)'
     __regex_website_background = r"(background-image\s*:\s*url\(')(.*)('\))"
 
-    def __init__(self, latest: bool = False):
-        """
-        Args:
-            latest (bool): Only return latest.
-        """
-        self.latest = latest
+    def __init__(self):
+        pass
 
     async def execute_async(self):
         return self.execute()
