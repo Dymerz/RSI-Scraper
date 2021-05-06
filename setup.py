@@ -24,6 +24,6 @@ setuptools.setup(
     python_requires='>=3.7',
     install_requires=[
         'requests>=2.25.1',
-        'lxml>=4.6.2',
+        'lxml>=4.6.3',
     ]
 )
