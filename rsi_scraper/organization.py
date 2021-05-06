@@ -201,7 +201,6 @@ class Organization(ICommand):
                 for v in tree.xpath('//*[contains(@class, "org-cell")][{}]/a/*[@class="left"]/*[@class="identity"]/*[@class="symbol"]/text()'.format(i)):
                     org["sid"] = v
                     break
-                print(org, flush=True)
 
                 # ensure the right Organization is returned
                 if org["sid"] != sid:
