@@ -18,6 +18,8 @@ class ProgressTracker(ICommand):
         """
         self.date_min = "2020-01-01"
         self.date_max = "2022-12-31"
+        self.limit = 20
+        self.offset = 0
 
     async def execute_async(self):
         return self.execute()
@@ -30,22 +32,69 @@ class ProgressTracker(ICommand):
             {
                 "operationName": "teams",
                 "query": """query
-                    teams($startDate: String!, $endDate: String!) {
+                    teams(
+                        $startDate: String!,
+                        $endDate: String!,
+                        $search: String,
+                        $teamSlug: String,
+                        $deliverableSlug: String,
+                        $projectSlugs: [String],
+                        $disciplineSlugs: [String],
+                        $sortBy: SortMethod,
+                        $offset: Int,
+                        $limit: Int
+                    ) {
                         progressTracker {
-                            teams(startDate: $startDate, endDate: $endDate) {
-                                ...Team
-                                __typename
-                            }
+                            teams(
+                                startDate: $startDate
+                                endDate: $endDate
+                                search: $search
+                                teamSlug: $teamSlug
+                                deliverableSlug: $deliverableSlug
+                                projectSlugs: $projectSlugs
+                                disciplineSlugs: $disciplineSlugs
+                                sortBy: $sortBy
+                                offset: $offset
+                                limit: $limit) {
+                                    totalCount
+                                    metaData {
+                                        ...Team
+                                        timeAllocations {
+                                            ...TimeAllocation
+                                            __typename
+                                        }
+                                        __typename
+                                    }
+                                    __typename
+                                }
                             __typename
                         }
                     }
                     fragment Team on Team {
-                        title    description    uuid    startDate    endDate    numberOfDeliverables    slug    __typename
+                        title
+                        description
+                        uuid
+                        abbreviation
+                        startDate
+                        endDate
+                        numberOfDeliverables
+                        slug
+                        __typename
                     }
-                    """,
+
+                    fragment TimeAllocation on TimeAllocation {
+                        startDate
+                        endDate
+                        uuid
+                        partialTime
+                        __typename
+                    }
+              """,
                 "variables": {
                     "startDate": self.date_min,
                     "endDate": self.date_max,
+                    "offset": self.offset,
+                    "limit": self.limit
                 }
             }
         ]
@@ -61,7 +110,7 @@ class ProgressTracker(ICommand):
         if len(resp) > 0 and 'data' not in resp[0]:
             return None
 
-        return resp[0]['data']['progressTracker']['teams']
+        return resp[0]['data']['progressTracker']['teams']['metaData']
 
 
 class ProgressTrackerInfo(ICommand):
@@ -99,12 +148,41 @@ class ProgressTrackerInfo(ICommand):
             {
                 "operationName": "deliverables",
                 "query": """query
-                    deliverables($teamSlug: String!, $startDate: String!, $endDate: String!) {
+                    deliverables(
+                        $startDate: String!,
+                        $endDate: String!,
+                        $search: String,
+                        $deliverableSlug: String,
+                        $teamSlug: String,
+                        $projectSlugs: [String],
+                        $categoryIds: [Int],
+                        $sortBy: SortMethod,
+                        $offset: Int,
+                        $limit: Int
+                    ) {
                         progressTracker {
-                            deliverables(teamSlug: $teamSlug, startDate: $startDate, endDate: $endDate) {
-                                ...Deliverable
-                                projects {
-                                    ...Project
+                            deliverables(
+                                startDate: $startDate
+                                endDate: $endDate
+                                search: $search
+                                deliverableSlug: $deliverableSlug
+                                teamSlug: $teamSlug
+                                projectSlugs: $projectSlugs
+                                categoryIds: $categoryIds
+                                sortBy: $sortBy
+                                offset: $offset
+                                limit: $limit
+                            ) {
+                                totalCount
+                                metaData {
+                                    ...Deliverable card {
+                                        ...Card
+                                        __typename
+                                    }
+                                    projects {
+                                        ...Project
+                                        __typename
+                                    }
                                     __typename
                                 }
                                 __typename
@@ -120,6 +198,28 @@ class ProgressTrackerInfo(ICommand):
                         startDate
                         endDate
                         numberOfDisciplines
+                        numberOfTeams
+                        updateDate
+                        totalCount
+                        __typename
+                    }
+                    fragment Card on Card {
+                        id
+                        title
+                        description
+                        category
+                        release {
+                            id
+                            title
+                            __typename
+                        }
+                        board {
+                            id
+                            title
+                            __typename
+                        }
+                        updateDate
+                        thumbnail
                         __typename
                     }
                     fragment Project on Project {
@@ -127,7 +227,7 @@ class ProgressTrackerInfo(ICommand):
                         logo
                         __typename
                     }
-                    """,
+                """,
                 "variables": {
                     "teamSlug": team_slug,
                     "startDate": self.date_min,
@@ -148,7 +248,7 @@ class ProgressTrackerInfo(ICommand):
         if len(resp) > 0 and 'data' not in resp[0]:
             return None
 
-        return resp[0]['data']['progressTracker']['deliverables']
+        return resp[0]['data']['progressTracker']['deliverables']['metaData']
 
     def get_disciplines(self, team_slug: str, delivery_slugs: list()):
         data = []
