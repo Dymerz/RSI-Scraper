@@ -4,6 +4,7 @@ from .validator import assert_valid_schema
 
 @pytest.mark.organization
 @pytest.mark.parametrize('sid', [
+    ('SIBYLLA'),
     ('PROTECTORA'),
     ('ODINT'),
     ('HWFC'),

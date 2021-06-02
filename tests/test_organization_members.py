@@ -4,6 +4,7 @@ from .validator import assert_valid_schema
 
 @pytest.mark.organization_members
 @pytest.mark.parametrize('sid, page', [
+    ('SIBYLLA', 1),
     ('PROTECTORA', 3),
     ('CORCOP', 1),
     ('IPIX', 3),
