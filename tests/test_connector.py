@@ -16,7 +16,6 @@ def test_request():
     assert req.status_code == 200
 
 
-@pytest.mark.asyncio
 @pytest.mark.connector
 async def test_request_async():
     conn = Connector()
@@ -43,7 +42,6 @@ def test_proxy():
         warnings.warn(UserWarning('Executing without proxy'))
 
 
-@pytest.mark.asyncio
 @pytest.mark.connector
 async def test_request_rsi():
     conn = Connector()
