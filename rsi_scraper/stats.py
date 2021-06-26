@@ -50,7 +50,6 @@ class Stats(ICommand):
 
     def __get_live_pu(self, text):
         m = re.search(self.__regex_api_live, text, re.IGNORECASE)
-        print(m)
         if m:
             return m.group(3)
         return None
