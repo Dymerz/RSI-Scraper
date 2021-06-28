@@ -10,14 +10,14 @@ class ProgressTracker(ICommand):
 
     __url_progress_tracker = "https://robertsspaceindustries.com/graphql"
 
-    def __init__(self):
+    def __init__(self, date_min="2020-01-01", date_max="2022-12-31"):
         """
         Args:
             date_min (str): The roadmap start date.
             date_max (str): The roadmap end date.
         """
-        self.date_min = "2020-01-01"
-        self.date_max = "2022-12-31"
+        self.date_min = date_min
+        self.date_max = date_max
         self.limit = 20
         self.offset = 0
 
@@ -119,16 +119,16 @@ class ProgressTrackerInfo(ICommand):
 
     __url_progress_tracker = "https://robertsspaceindustries.com/graphql"
 
-    def __init__(self, slug: str):
+    def __init__(self, slug: str, date_min="2020-01-01", date_max="2022-12-31"):
         """
         Args:
+            slug (str): The slug identifier to get.
             date_min (str): The roadmap start date.
             date_max (str): The roadmap end date.
-            slug (str): The slug identifier to get.
         """
         self.team_slug = slug
-        self.date_min = "2020-01-01"
-        self.date_max = "2022-12-31"
+        self.date_min = date_min
+        self.date_max = date_max
 
     async def execute_async(self):
         return self.execute()

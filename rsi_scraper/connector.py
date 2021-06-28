@@ -34,7 +34,7 @@ class Connector:
         self, url: str, json_data: dict = None,
         headers: dict = {}, method: str = "post"
     ):
-        """Send request to the specified url using parameters
+        """Send a request to the specified url using parameters
 
         Args:
             url (str): The URL.

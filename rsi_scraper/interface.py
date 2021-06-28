@@ -27,7 +27,7 @@ class ICommand:
         """Convert an object to HTTP parameter.
 
         Args:
-            val (object): A value to convert in str.
+          val (object): A value to convert in str.
 
         Returns:
             str: A string ready for HTTP request.

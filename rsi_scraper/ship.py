@@ -16,6 +16,36 @@ class Ship(ICommand):
     __url_ships_id = "https://robertsspaceindustries.com/ship-matrix/index"
 
     def __init__(self, **kwargs):
+        """Get ships
+        Args:
+            **kwargs: Arbitrary keyword arguments.
+
+        Keyword Args:
+            name (str):
+                The name of the ship to search.
+            classification (str):
+                The type of ship to get, you can pass this parameter at multiple times. ( combat , transport , exploration , industrial , support , competition , ground , multi ).
+            length_min (int):
+                The minimal length (in meters).
+            length_max (int):
+                The maximal length (in meters).
+            crew_min (int):
+                The minimal crew count.
+            crew_max (int):
+                The maximal crew count.
+            price_min (int):
+                The minimal price (in US dollars).
+            price_max (int):
+                The maximal price (in US dollars).
+            mass_min (int):
+                The minimal mass (Kg).
+            mass_max (int):
+                The maximal mass (Kg).
+            page_max (int):
+                The numbers of pages to process (1 page contains 10 ships), one page takes around 15s to process.
+            page (int):
+                The page to fetch (starts at 1).
+        """
         self.kwargs = kwargs
 
     async def execute_async(self):
@@ -29,7 +59,7 @@ class Ship(ICommand):
         """Get all ships using advanced search through pages.
 
         Returns:
-                list: Ships.
+            list: Ships.
         """
         name = self.convert_val(self.kwargs.get("name"))
         classification = self.convert_val(self.kwargs.get("classification"))
@@ -124,10 +154,11 @@ class Ship(ICommand):
         """Get ship by its id.
 
         Args:
-                ship_id (int): The ship id.
+            ship_id (int): The ship id.
 
         Returns:
-                dict: The ship.
+            dict: The ship.
+            requests.models.Response:
         """
         resp_ship = await self.get_ship_by_id(ship_id)
         req_page = None
@@ -147,7 +178,7 @@ class Ship(ICommand):
             get_price (bool, optional): if the price need to be retrieved. Default to False.
 
         Returns:
-            [type]: The ship.
+            dict: The ship.
         """
 
         parameters = {}

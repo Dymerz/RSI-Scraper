@@ -199,7 +199,7 @@ class Organization(ICommand):
             try:
 
                 for v in tree.xpath('//*[contains(@class, "org-cell")][{}]/a/*[@class="left"]/*[@class="identity"]/*[@class="symbol"]/text()'.format(i)):
-                    org["sid"] = v
+                    org["sid"] = v.strip()
                     break
 
                 # ensure the right Organization is returned
@@ -255,6 +255,15 @@ class OrganizationMembers(ICommand):
     __url_organization_members = "https://robertsspaceindustries.com/api/orgs/getOrgMembers"
 
     def __init__(self, sid: str, **kwargs):
+        """
+        Args:
+            sid (str): The Spectrum Identification (sid).
+
+        Keyword Args:
+            rank (str): The id of the rank to search.
+            role (str): The id of the role to search.
+            main_org (bool): If true, get all the players which is the main organization.
+        """
         self.sid = sid
         self.kwargs = kwargs
 
@@ -262,10 +271,6 @@ class OrganizationMembers(ICommand):
         return self.execute()
 
     def execute(self):
-        """ [public] get organization's members
-            [return] assoc array with all info or None if error
-            [dependency] this is a webscraping, this may not work in case of changes
-        """
         result = []
         page = self.convert_val(self.kwargs.get("page"))
 

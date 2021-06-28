@@ -15,6 +15,11 @@ class User(ICommand):
     __url_affiliation = "https://robertsspaceindustries.com/citizens/{0}/organizations"
 
     def __init__(self, user_handle):
+        """Get user info.
+
+        Args:
+            user_handle (str): The user handle.
+        """
         super().__init__()
         self.user_handle = user_handle
 
@@ -179,7 +184,7 @@ class User(ICommand):
         # get html contents
         tree = html.fromstring(req.content)
 
-        # begin store basic data
+        # store basic data
         result = []
 
         for a in tree.xpath("//*[contains(@class, 'affiliation')]"):

@@ -17,8 +17,7 @@ class Stats(ICommand):
         return self.execute()
 
     def execute(self):
-        """ [public] get general info
-            [return] assoc array of info
+        """ Get general info
         """
 
         # Get stats info
@@ -67,8 +66,10 @@ class Stats(ICommand):
         return None
 
     def __get_crow_stats(self, chart="day"):
-        """ [public] get all Crow stats
-            [return] assoc array of stats
+        """ Get all Crow stats
+
+            Returns:
+                dict: assoc array of stats.
         """
         data = {
             "alpha_slots": True,
