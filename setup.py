@@ -13,7 +13,7 @@ setuptools.setup(
     version=version,
     author="Urbain Corentin",
     url="https://github.com/Dymerz/RSI-Scraper",
-    description="Web scapper for RSI",
+    description="Web scaper for RSI",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
