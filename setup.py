@@ -12,7 +12,6 @@ setuptools.setup(
     name="rsi-scraper",
     version=version,
     author="Urbain Corentin",
-    author_email="corentin.urbain@gmail.com",
     url="https://github.com/Dymerz/RSI-Scraper",
     description="Web scapper for RSI",
     long_description=long_description,
