@@ -43,12 +43,14 @@ class Version(ICommand):
             # get article title
             for title in patch.xpath("./*[contains(@class, 'title-holder')]/*/text()"):
                 p['title'] = title.strip()
-                if m := re.search(self.__regex_website_version, title):
+                m = re.search(self.__regex_website_version, title)
+                if m:
                     p['version'] = m.group(1)
 
             # get background image
             for style in patch.xpath("./*[contains(@class, 'background')]/@style"):
-                if m := re.match(self.__regex_website_background, style):
+                m = re.match(self.__regex_website_background, style)
+                if m:
                     background = m.group(2)
 
                     if background.startswith('http'):
