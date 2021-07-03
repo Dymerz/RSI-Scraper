@@ -26,13 +26,7 @@
                 "stars": {
                     "type": "integer"
                 }
-            },
-            "required": [
-                "image",
-                "name",
-                "rank",
-                "sid"
-            ]
+            }
         },
         "profile": {
             "type": "object",
