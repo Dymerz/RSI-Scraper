@@ -3,10 +3,14 @@ from .validator import assert_valid_schema
 
 
 @pytest.mark.user
-def test_request():
+@pytest.mark.parametrize('handle', [
+    ("dymerz"),
+    ("Dewderonomy")
+])
+def test_request(handle):
     from rsi_scraper import User
 
-    object = User('dymerz')
+    object = User(handle)
     data = object.execute()
     assert data is not None
 
