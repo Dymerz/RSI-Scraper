@@ -7,7 +7,9 @@ from .ship import Ship
 from .starmap import (
     StarmapSystems, StarmapTunnels, StarmapSpecies,
     StarmapAffiliations, StarmapStarSystems,
-    StarmapCelestialObjects, StarmapSearch)
+    StarmapCelestialObjects, StarmapSearch,
+    StarmapRouteSearch
+)
 from .stats import Stats
 from .telemetry import Telemetry
 from .user import User
@@ -23,6 +25,7 @@ __all__ = [
     'StarmapSystems', 'StarmapTunnels', 'StarmapSpecies',
     'StarmapAffiliations', 'StarmapStarSystems',
     'StarmapCelestialObjects', 'StarmapSearch',
+    'StarmapRouteSearch',
     'Stats',
     'Telemetry',
     'User',
