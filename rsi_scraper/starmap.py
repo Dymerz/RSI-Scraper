@@ -234,13 +234,16 @@ class StarmapRouteSearch(ICommand):
 
     __url_find = "https://robertsspaceindustries.com/api/starmap/routes/find"
 
-    def __init__(self, _from: str, to: str):
+    def __init__(self, _from: str, to: str, ship_size: str):
         """
         Args:
-            search (str): The search.
+            _from (str): The object code for the departing system
+            to (str): The object code for the destination system
+            ship_size (str): The size of the ship traveling. Valid values are S, M, L
         """
         self._from = _from
         self._to = to
+        self._size = ship_size
 
     async def execute_async(self):
         return self.execute()
@@ -249,7 +252,7 @@ class StarmapRouteSearch(ICommand):
         data = {
             "departure": self._from,
             "destination": self._to,
-            "ship_size": "L",
+            "ship_size": self._size
         }
         req = Connector().request(self.__url_find, data)
         if req is None or req.status_code != 200:
