@@ -88,7 +88,9 @@ class StarmapSpecies(ICommand):
         if self.name is None:
             res = species
         else:
-            res = list(filter(lambda s: str(s['name']).lower() == str(self.name).lower() or str(s['code']).lower() == str(self.name).lower(), species))
+            res = list(filter(
+                lambda s: str(s['name']).lower() == str(self.name).lower() or str(s['code']).lower() == str(
+                    self.name).lower(), species))
 
         if len(res) == 0:
             return None
@@ -220,6 +222,49 @@ class StarmapSearch(ICommand):
         res = {
             "systems": resp['data']['systems']['resultset'],
             "objects": resp['data']['objects']['resultset']
+        }
+        return res
+
+
+class StarmapRouteSearch(ICommand):
+    """StarmapRouteSearch
+    """
+
+    __url_find = "https://robertsspaceindustries.com/api/starmap/routes/find"
+
+    def __init__(self, _from: str, to: str, ship_size: str):
+        """
+        Args:
+            _from (str): The object code for the departing system
+            to (str): The object code for the destination system
+            ship_size (str): The size of the ship traveling. Valid values are S, M, L
+        """
+        self._from = _from
+        self._to = to
+        self._size = ship_size
+
+    async def execute_async(self):
+        return self.execute()
+
+    def execute(self):
+        data = {
+            "departure": self._from,
+            "destination": self._to,
+            "ship_size": self._size
+        }
+        req = Connector().request(self.__url_find, data)
+        if req is None or req.status_code != 200:
+            return None
+
+        resp = req.json()
+
+        # check response
+        if resp['success'] != 1 or "data" not in resp:
+            return None
+
+        res = {
+            "shortest": resp['data']['shortest'],
+            "leastjumps": resp['data']['leastjumps']
         }
         return res
 

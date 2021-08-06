@@ -31,6 +31,7 @@ This module allows you to easy retrive online information related to the RSI web
 | StarmapStarSystems    | Get star-system from the starmap by code |
 | StarmapCelestialObjects   | Get celestial objects from the starmap by name |
 | StarmapSearch | Search object from the starmap by name |
+| StarmapRouteSearch   | Find routes from position to destionation |
 | Stats | Get general information like the numbers of citizens |
 | Telemetry | Get some telemetry info |
 | User  | Find information about a user by handle |
