@@ -1,0 +1,201 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "shortest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "first_jump": {
+            "type": [
+                "string",
+                "null"
+            ]
+          },
+          "flight_distance": {
+            "type": "number"
+          },
+          "jumps": {
+            "type": "integer"
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "system_id": {
+                  "type": "string"
+                },
+                "system_code": {
+                  "type": "string"
+                },
+                "object_id": {
+                  "type": "string"
+                },
+                "object_code": {
+                  "type": "string"
+                },
+                "segment_type": {
+                  "type": "string"
+                },
+                "segment_distance": {
+                  "type": [
+                    "number",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "is_departure": {
+                  "type": [
+                    "integer",
+                    "boolean"
+                  ]
+                },
+                "is_destination": {
+                  "type": [
+                    "boolean",
+                    "integer"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "type",
+                "system_id",
+                "system_code",
+                "object_id",
+                "object_code",
+                "segment_type",
+                "segment_distance",
+                "is_departure",
+                "is_destination"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "label",
+          "first_jump",
+          "flight_distance",
+          "jumps",
+          "segments"
+        ]
+      },
+      "leastjumps": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "first_jump": {
+            "type": [
+                "string",
+                "null"
+            ]
+          },
+          "flight_distance": {
+            "type": "number"
+          },
+          "jumps": {
+            "type": "integer"
+          },
+          "segments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "system_id": {
+                  "type": "string"
+                },
+                "system_code": {
+                  "type": "string"
+                },
+                "object_id": {
+                  "type": "string"
+                },
+                "object_code": {
+                  "type": "string"
+                },
+                "segment_type": {
+                  "type": "string"
+                },
+                "segment_distance": {
+                  "type": [
+                    "number",
+                    "integer",
+                    "null"
+                  ]
+                },
+                "is_departure": {
+                  "type": [
+                    "integer",
+                    "boolean"
+                  ]
+                },
+                "is_destination": {
+                  "type": [
+                    "boolean",
+                    "integer"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "type",
+                "system_id",
+                "system_code",
+                "object_id",
+                "object_code",
+                "segment_type",
+                "segment_distance",
+                "is_departure",
+                "is_destination"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "label",
+          "first_jump",
+          "flight_distance",
+          "jumps",
+          "segments"
+        ]
+      }
+    },
+    "required": [
+      "shortest",
+      "leastjumps"
+    ]
+  }
+
