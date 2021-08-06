@@ -226,8 +226,6 @@ class StarmapSearch(ICommand):
         return res
 
 
-# {"departure":"STANTON.LZS.LORVILLE","destination":"STANTON.LZS.AREA18","ship_size":"L"}
-
 class StarmapRouteSearch(ICommand):
     """StarmapRouteSearch
     """
