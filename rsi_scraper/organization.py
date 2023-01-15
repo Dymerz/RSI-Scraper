@@ -141,6 +141,33 @@ class Organization(ICommand):
         for v in tree.xpath('//*[contains(@class, "body") and contains(@class, "markitup-text")]'):
             result["headline"]["plaintext"] = ''.join(v.itertext())
             break
+            
+        result["history"] = {}
+        for v in tree.xpath('//*[@id="tab-history"]/div'):
+            result["history"]["html"] = etree.tostring(v, pretty_print=True).decode("utf-8")
+            break
+
+        for v in tree.xpath('//*[@id="tab-history"]/div'):
+            result["history"]["plaintext"] = ''.join(v.itertext())
+            break
+            
+        result["manifesto"] = {}
+        for v in tree.xpath('//*[@id="tab-manifesto"]/div'):
+            result["manifesto"]["html"] = etree.tostring(v, pretty_print=True).decode("utf-8")
+            break
+
+        for v in tree.xpath('//*[@id="tab-manifesto"]/div'):
+            result["manifesto"]["plaintext"] = ''.join(v.itertext())
+            break
+
+        result["charter"] = {}
+        for v in tree.xpath('//*[@id="tab-charter"]/div'):
+            result["charter"]["html"] = etree.tostring(v, pretty_print=True).decode("utf-8")
+            break
+
+        for v in tree.xpath('//*[@id="tab-charter"]/div'):
+            result["charter"]["plaintext"] = ''.join(v.itertext())
+            break
 
         return result
 
