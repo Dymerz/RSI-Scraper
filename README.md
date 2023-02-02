@@ -1,5 +1,5 @@
 # RSI-Scraper
-[![GitHub license](https://img.shields.io/github/license/Dymerz/RSI-Scraper)](https://github.com/Dymerz/RSI-Scraper/blob/develop/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/Dymerz/RSI-Scraper)](https://github.com/Dymerz/RSI-Scraper/issues) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rsi-scraper) ![PyPI - Downloads](https://img.shields.io/pypi/dw/rsi-scraper)
+[![GitHub license](https://img.shields.io/github/license/Dymerz/RSI-Scraper)](https://github.com/Dymerz/RSI-Scraper/blob/develop/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/Dymerz/RSI-Scraper)](https://github.com/Dymerz/RSI-Scraper/issues) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/rsi-scraper) ![PyPI](https://img.shields.io/pypi/v/rsi-scraper?label=version)
 
 ## Overview
 
