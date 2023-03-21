@@ -94,12 +94,12 @@ class User(ICommand):
 
         # get profile image
         for v in tree.xpath('//*[contains(@class, "title") and contains(text(), "Profile")]/following-sibling::*/div[@class="thumb"]/img/@src'):
-            result["profile"]["image"] = Connector().url_host + v.strip()
+            result["profile"]["image"] = Connector.url_host(v.strip())
             break
 
         # get organisation image
         for v in tree.xpath('//*[contains(@class, "title") and contains(text(), "Main organization")]/following-sibling::*/div[@class="thumb"]/a/img/@src'):
-            result["organization"]["image"] = Connector().url_host + v.strip()
+            result["organization"]["image"] = Connector.convert_path(v.strip())
             break
 
         # get organisation name
@@ -204,7 +204,7 @@ class User(ICommand):
             aff["stars"] = len(a.xpath(".//*[contains(@class, 'ranking')]/span[contains(@class, 'active')]"))
 
             for v in a.xpath(".//img/@src"):
-                aff["image"] = Connector().url_host + v.strip()
+                aff["image"] = Connector.convert_path(v.strip())
                 break
 
             result.append(aff)

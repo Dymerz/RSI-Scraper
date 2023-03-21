@@ -4,6 +4,7 @@ A module to perform requests
 
 import os
 import requests
+from urllib.parse import urljoin
 
 
 class Connector:
@@ -72,3 +73,7 @@ class Connector:
             return None
 
         return req
+
+    @classmethod
+    def convert_path(cls, path: str):
+        return urljoin(cls.url_host, path)
