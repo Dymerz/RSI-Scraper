@@ -94,7 +94,7 @@ class User(ICommand):
 
         # get profile image
         for v in tree.xpath('//*[contains(@class, "title") and contains(text(), "Profile")]/following-sibling::*/div[@class="thumb"]/img/@src'):
-            result["profile"]["image"] = Connector.url_host(v.strip())
+            result["profile"]["image"] = Connector.convert_path(v.strip())
             break
 
         # get organisation image
