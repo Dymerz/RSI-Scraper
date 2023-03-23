@@ -104,7 +104,7 @@ class Organization(ICommand):
         for v in tree.xpath(
             '//*[contains(@class, "logo") and contains(@class, "noshadow")]/img/@src'
         ):
-            result["logo"] = Connector().url_host + v
+            result["logo"] = Connector.convert_path(v)
             break
 
         for v in tree.xpath('//*[@id="organization"]//h1/text()'):
@@ -115,7 +115,7 @@ class Organization(ICommand):
         result["focus"]["primary"] = {}
 
         for v in tree.xpath('//*[contains(@class, "primary") and contains(@class, "tooltip-wrap")]/img/@src'):
-            result["focus"]["primary"]["image"] = Connector().url_host + v
+            result["focus"]["primary"]["image"] = Connector.convert_path(v)
             break
         for v in tree.xpath('//*[contains(@class, "primary") and contains(@class, "tooltip-wrap")]/img/@alt'):
             result["focus"]["primary"]["name"] = v.strip()
@@ -123,14 +123,14 @@ class Organization(ICommand):
 
         result["focus"]["secondary"] = {}
         for v in tree.xpath('//*[contains(@class, "secondary") and contains(@class, "tooltip-wrap")]/img/@src'):
-            result["focus"]["secondary"]["image"] = Connector().url_host + v
+            result["focus"]["secondary"]["image"] = Connector.convert_path(v)
             break
         for v in tree.xpath('//*[contains(@class, "secondary") and contains(@class, "tooltip-wrap")]/img/@alt'):
             result["focus"]["secondary"]["name"] = v.strip()
             break
 
         for v in tree.xpath('//*[contains(@class, "banner")]/img/@src'):
-            result["banner"] = Connector().url_host + v
+            result["banner"] = Connector.convert_path(v)
             break
 
         result["headline"] = {}
@@ -234,11 +234,11 @@ class Organization(ICommand):
                     continue
 
                 for v in tree.xpath('//*[contains(@class, "org-cell")][{}]/a/@href'.format(i)):
-                    org["href"] = Connector().url_host + v
+                    org["href"] = Connector.convert_path(v)
                     break
 
                 for v in tree.xpath('//*[contains(@class, "org-cell")][{}]/a/*[@class="left"]/*[@class="thumb"]/img/@src'.format(i)):
-                    org["logo"] = Connector().url_host + v
+                    org["logo"] = Connector.convert_path(v)
                     break
 
                 for v in tree.xpath('//*[contains(@class, "org-cell")][{}]/a/*[@class="left"]/*[@class="identity"]/*[contains(@class, "name")]/text()'.format(i)):
@@ -369,7 +369,7 @@ class OrganizationMembers(ICommand):
                 user["roles"].append(v)
 
             for v in tree.xpath(f"//*[contains(@class, 'member-item')][{index}]//img/@src"):
-                user["image"] = Connector().url_host + v.strip()
+                user["image"] = Connector.convert_path(v.strip())
                 break
 
             # some fields are filled of "&nbsp", so skip them
