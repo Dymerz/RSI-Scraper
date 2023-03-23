@@ -73,7 +73,7 @@ class Organization(ICommand):
         return result
 
     def get_organization_info(self, sid: str):
-        """Get organizaion info.
+        """Get organization info.
 
         Args:
             sid (str): The Spectrum Identification (sid).
@@ -141,7 +141,7 @@ class Organization(ICommand):
         for v in tree.xpath('//*[contains(@class, "body") and contains(@class, "markitup-text")]'):
             result["headline"]["plaintext"] = ''.join(v.itertext())
             break
-            
+
         result["history"] = {}
         for v in tree.xpath('//*[@id="tab-history"]/div'):
             result["history"]["html"] = etree.tostring(v, pretty_print=True).decode("utf-8")
@@ -150,7 +150,7 @@ class Organization(ICommand):
         for v in tree.xpath('//*[@id="tab-history"]/div'):
             result["history"]["plaintext"] = ''.join(v.itertext())
             break
-            
+
         result["manifesto"] = {}
         for v in tree.xpath('//*[@id="tab-manifesto"]/div'):
             result["manifesto"]["html"] = etree.tostring(v, pretty_print=True).decode("utf-8")

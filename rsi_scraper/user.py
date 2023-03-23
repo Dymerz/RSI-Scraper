@@ -97,27 +97,27 @@ class User(ICommand):
             result["profile"]["image"] = Connector.convert_path(v.strip())
             break
 
-        # get organisation image
+        # get organization image
         for v in tree.xpath('//*[contains(@class, "title") and contains(text(), "Main organization")]/following-sibling::*/div[@class="thumb"]/a/img/@src'):
             result["organization"]["image"] = Connector.convert_path(v.strip())
             break
 
-        # get organisation name
+        # get organization name
         for v in tree.xpath('//a[contains(@class, "value") and contains(@class, "data")]/text()'):
             result["organization"]["name"] = v.strip()
             break
 
-        # get organisation SID (Spectrum Identification)
+        # get organization SID (Spectrum Identification)
         for v in tree.xpath('//*[contains(@class, "label") and text() = "Spectrum Identification (SID)"]/following-sibling::*[1]/text()'):
             result["organization"]["sid"] = v.strip()
             break
 
-        # get organisation rank
+        # get organization rank
         for v in tree.xpath('//*[contains(@class, "label") and text() = "Organization rank"]/following-sibling::*[1]/text()'):
             result["organization"]["rank"] = v.strip()
             break
 
-        # get organisation stars
+        # get organization stars
         result["organization"]["stars"] = len(tree.xpath(".//*[contains(@class, 'ranking')]/span[contains(@class, 'active')]"))
 
         # get enlist date
@@ -125,7 +125,7 @@ class User(ICommand):
             result["profile"]["enlisted"] = datetime.strptime(v.strip(), "%b %d, %Y").strftime('%Y-%m-%dT%H:%M:%S.%f')
             break
 
-        # find coutry and/or region
+        # find country and/or region
         for v in tree.xpath('//*[contains(@class, "label") and text() = "Location"]/following-sibling::*[@class="value"]/text()'):
             result["profile"]["location"] = {}
             if "," in v.strip():

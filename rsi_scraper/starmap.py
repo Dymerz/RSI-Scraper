@@ -143,7 +143,7 @@ class StarmapStarSystems(ICommand):
     async def execute_async(self):
         return self.execute()
 
-    # Get Celetial Objects info
+    # Get Celestial Objects info
     def execute(self):
         req = Connector().request(self.__url_star_system.format(self.code))
         if req is None or req.status_code != 200:
