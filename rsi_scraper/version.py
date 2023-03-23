@@ -35,10 +35,7 @@ class Version(ICommand):
 
             # get article url
             href = patch.attrib['href']
-            if href.startswith('http'):
-                p['link'] = href
-            else:
-                p['link'] = Connector.url_host + href
+            p['link'] = Connector.convert_path(href)
 
             # get article title
             for title in patch.xpath("./*[contains(@class, 'title-holder')]/*/text()"):
@@ -52,11 +49,7 @@ class Version(ICommand):
                 m = re.match(self.__regex_website_background, style)
                 if m:
                     background = m.group(2)
-
-                    if background.startswith('http'):
-                        p['image'] = background
-                    else:
-                        p['image'] = Connector.url_host + background
+                    p['image'] = Connector.convert_path(background)
 
             result.append(p)
             print(p)
